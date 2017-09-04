@@ -1,3 +1,5 @@
+
+
 DROP TABLE IF EXISTS books;
 
 -- change the format of ISBN   todo
@@ -9,3 +11,7 @@ CREATE TABLE books(
   ISBN VARCHAR(15) NOT NULL
 );
 
+INSERT INTO books (ID, AUTHOR, TITLE, ISBN) VALUES (0, "Andrzej", "tytul1", "123");
+INSERT INTO books (ID, AUTHOR, TITLE, ISBN) VALUES (0, "Adam", "tytul2", "321");
+
+SELECT * FROM books;

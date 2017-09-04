@@ -1,12 +1,3 @@
 -- database
 DROP DATABASE IF EXISTS books;
 CREATE DATABASE books;
-
--- user
-DROP USER IF EXISTS reader;
-CREATE USER reader WITH PASSWORD 'reader123';
-
--- privileges
-GRANT ALL PRIVILEGES ON DATABASE books TO reader;
-GRANT USAGE ON SCHEMA public TO reader;
-ALTER USER reader WITH SUPERUSER;

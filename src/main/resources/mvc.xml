@@ -26,6 +26,7 @@
         <property name="defaultEncoding" value="utf-8"/>
     </bean>
 
+
     <mvc:resources mapping="/resources/**" location="/resources/"
                    cache-period="31556926"/>
 
