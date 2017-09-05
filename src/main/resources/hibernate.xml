@@ -7,16 +7,17 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+    <!--session factory-->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan" value="eu.ncdc.entity"/>
         <property name="configLocation" value="classpath:hibernate/hibernate.cfg.xml"/>
     </bean>
 
+    <!--transaction manager-->
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

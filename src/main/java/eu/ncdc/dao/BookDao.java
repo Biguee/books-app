@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface BookDao {
 
-    //create
+    //C-reate
     void saveBook(Book book);
-    //read
+    //R-ead
     Book findBookById(Integer id);
-    //list
+    //L-ist
     List<Book> findAllBooks();
 
 }

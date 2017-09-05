@@ -5,6 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class AuthorValidator implements ConstraintValidator<AuthorStartsFromA, String>{
 
@@ -21,6 +22,8 @@ public class AuthorValidator implements ConstraintValidator<AuthorStartsFromA, S
                 break;
             }
         }
+        Logger.getAnonymousLogger().info("checking author validation");
         return wordStartsFromA.startsWith("A") || wordStartsFromA.startsWith("a");
+
     }
 }

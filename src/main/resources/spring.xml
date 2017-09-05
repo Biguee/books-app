@@ -9,12 +9,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="eu.ncdc.service"/>
 
-
     <import resource="classpath:dao.xml"/>
     <import resource="classpath:hibernate.xml"/>
-
-
-
-
 
 </beans>

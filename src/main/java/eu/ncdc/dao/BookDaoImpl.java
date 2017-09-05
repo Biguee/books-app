@@ -39,7 +39,6 @@ public class BookDaoImpl implements BookDao{
         CriteriaQuery<Book> criteriaQuery = criteriaBuilder.createQuery(Book.class);
         criteriaQuery.from(Book.class);
         return getCurrentSession().createQuery(criteriaQuery).list();
-
     }
 
     private Session getCurrentSession(){

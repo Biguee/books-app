@@ -60,7 +60,7 @@ public class ISBNValidator implements ConstraintValidator<CorrectISBN, String> {
         }
             catch (NumberFormatException e){
             }
-        Logger.getAnonymousLogger().info(" ISBN input");
+        Logger.getAnonymousLogger().info("checking isbn validation");
         return isbnOnlyNumbers.matches("[0-9]+") && isbn.length() > 9 && controlNumberISBN10 == controlSum10 && controlNumberISBN13 == controlSum13;
 
     }
