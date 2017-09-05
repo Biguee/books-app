@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Book added</title>
-    <link href="<c:url value="/resources/main.css?version=6" />" rel="stylesheet">
+    <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
 </head>
 
 <body>

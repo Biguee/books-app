@@ -5,16 +5,16 @@
 <html>
 <head>
     <title>Add a book</title>
-    <link href="<c:url value="/resources/main.css?version=6" />" rel="stylesheet">
+    <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
 </head>
 
 <body>
 <h1>Add a book</h1>
-<f:form method="post" modelAttribute="book">
+<f:form method="post" modelAttribute="book" id="book">
     <div>Author: </div>
     <f:input path="author"/>
     <p>
-        <f:errors path="author"/>
+        <f:errors path="author" cssClass="error"/>
     </p>
     <div>Title: </div>
     <f:input path="title"/>

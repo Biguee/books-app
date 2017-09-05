@@ -1,8 +1,12 @@
 package eu.ncdc.entity;
 
 import eu.ncdc.validation.AuthorStartsFromA;
+import eu.ncdc.validation.CorrectISBN;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -17,8 +21,10 @@ public class Book {
     @AuthorStartsFromA
     @Column(name = "author")
     private String author;
+    @Length(min = 2, max = 100)
     @Column(name = "title")
     private String title;
+    @CorrectISBN
     @Column(name = "isbn")
     private String isbn;
 

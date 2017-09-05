@@ -9,16 +9,18 @@ import java.util.List;
 public class AuthorValidator implements ConstraintValidator<AuthorStartsFromA, String>{
 
     @Override
-    public void initialize(AuthorStartsFromA authorStartsFromA) {
-
-    }
+    public void initialize(AuthorStartsFromA authorStartsFromA) {}
 
     @Override
     public boolean isValid(String author, ConstraintValidatorContext context) {
         List<String> nameList = new ArrayList<String>(Arrays.asList(author.split(" ")));
-        String authorName = nameList.get(0);
-        String authorSurname = nameList.get(1);
-        return authorName.startsWith("A") || authorSurname.startsWith("A") || authorName.startsWith("a") || authorSurname.startsWith("a");
-        //if nameList <2 todo
+        String wordStartsFromA = "";
+        for (int i = 0; i < nameList.size(); i++) {
+            if (nameList.get(i).startsWith("A") || nameList.get(i).startsWith("a")){
+                wordStartsFromA = nameList.get(i);
+                break;
+            }
+        }
+        return wordStartsFromA.startsWith("A") || wordStartsFromA.startsWith("a");
     }
 }

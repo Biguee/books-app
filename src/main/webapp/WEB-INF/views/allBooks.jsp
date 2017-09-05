@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>List of books</title>
+    <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
 </head>
 <body>
 <h1>List of books:</h1>

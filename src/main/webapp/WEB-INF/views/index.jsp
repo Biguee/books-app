@@ -6,7 +6,7 @@
 <head>
     <title>Book's app</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="<c:url value="/resources/main.css?version=6" />" rel="stylesheet">
+    <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
 
 </head>
 <body>
