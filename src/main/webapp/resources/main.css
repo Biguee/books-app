@@ -7,14 +7,12 @@ div {
     color: #ffffff;
     font-size: large;
 }
-
 a:hover{
     color: white;
 }
 a:visited{
     color: #0d71af;
 }
-
 .textError{
     color: red;
 }

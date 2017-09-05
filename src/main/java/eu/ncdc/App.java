@@ -9,10 +9,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 
 
-
-    public static void main(String[] args) {
-        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
-        BookService bookService = applicationContext.getBean(BookService.class);
-        applicationContext.close();
-    }
+//
+//    public static void main(String[] args) {
+//        AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
+//        BookService bookService = applicationContext.getBean(BookService.class);
+//        applicationContext.close();
+//    }
 }

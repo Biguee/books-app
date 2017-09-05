@@ -14,28 +14,54 @@ public class ISBNValidator implements ConstraintValidator<CorrectISBN, String> {
 
     @Override
     public boolean isValid(String isbn, ConstraintValidatorContext context){
-        int[] isbnOnlyNumberArray = null;
+        int[] isbn13OnlyNumberArray = null;
+        int[] isbn10OnlyNumberArray = null;
         String isbnOnlyNumbers = isbn.replaceAll("-", "");
-        int controlSum = 0;
+        int controlSum10 = 0;
+        int controlSum13 = 0;
+        int controlNumberISBN10 = -1;
+        int controlNumberISBN13 = -1;
         try {
-            isbnOnlyNumberArray = Stream.of(isbnOnlyNumbers.split(""))
-                    .mapToInt(Integer::parseInt)
-                    .toArray();
-            for (int i = 0; i < isbnOnlyNumberArray.length - 1; i++) {
-                if (i % 2 == 0) {
-                    controlSum += isbnOnlyNumberArray[i] * 1;
-                } else {
-                    controlSum += isbnOnlyNumberArray[i] * 3;
+            if (isbnOnlyNumbers.length() == 13) {
+                isbn13OnlyNumberArray = Stream.of(isbnOnlyNumbers.split(""))
+                        .mapToInt(Integer::parseInt)
+                        .toArray();
+                for (int i = 0; i < isbn13OnlyNumberArray.length - 1; i++) {
+                    if (i % 2 == 0) {
+                        controlSum13 += isbn13OnlyNumberArray[i] * 1;
+                    } else {
+                        controlSum13 += isbn13OnlyNumberArray[i] * 3;
+                    }
                 }
+                System.out.println(controlSum13);
+                controlSum13 = controlSum13 % 10;
+                if (controlSum13 > 0) {
+                    controlSum13 = 10 - controlSum13;
+                }
+                controlNumberISBN13 = isbn13OnlyNumberArray[12];
+                controlNumberISBN10 = 0;
             }
-            System.out.println(controlSum);
-            controlSum = controlSum % 10;
-            if (controlSum > 0) {
-                controlSum = 10 - controlSum;
-            }}
+            else if (isbnOnlyNumbers.length() == 10){
+                isbn10OnlyNumberArray = Stream.of(isbnOnlyNumbers.split(""))
+                        .mapToInt(Integer::parseInt)
+                        .toArray();
+                for (int i = 0; i < isbn10OnlyNumberArray.length - 1; i++) {
+                    controlSum10 += isbn10OnlyNumberArray[i]*(i+1);
+                }
+                System.out.println(controlSum10);
+                controlSum10 = controlSum10 % 11;
+                controlNumberISBN10 = isbn10OnlyNumberArray[9];
+                controlNumberISBN13 = 0;
+            }
+            else{
+                controlNumberISBN10=-1;
+                controlNumberISBN13=-1;
+            }
+        }
             catch (NumberFormatException e){
             }
         Logger.getAnonymousLogger().info(" ISBN input");
-        return isbnOnlyNumbers.matches("[0-9]+") && isbn.length() > 12 && isbnOnlyNumberArray[12] == controlSum;
+        return isbnOnlyNumbers.matches("[0-9]+") && isbn.length() > 9 && controlNumberISBN10 == controlSum10 && controlNumberISBN13 == controlSum13;
+
     }
 }
