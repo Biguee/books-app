@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Target({ ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CorrectISBN {
-    String message() default "Invalid ISBN number - can contains only numbers and \"-\" (min. length is 13 digits";
+    String message() default "Invalid ISBN number - can contains only numbers and \"-\" (min. length is 13 digits)";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
