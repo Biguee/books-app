@@ -11,7 +11,7 @@
 </head>
 <body>
 <li>
-    <a href="showAllBooks.html">
+    <a href="allBooks.html">
         List of books
     </a>
 </li>

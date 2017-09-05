@@ -33,10 +33,10 @@ public class BookController {
         return new ModelAndView("/addBookConfirmation");
     }
 
-    @RequestMapping(value = "allBooks.html", method = RequestMethod.POST)
-    public ModelAndView showAllBooks(){
+    @RequestMapping(value = "allBooks.html")
+    public ModelAndView allBooks(){
         return new ModelAndView(
-                "/allBooks","bookList", bookService.findAllBooks());
+                "allBooks","bookList", bookService.findAllBooks());
     }
 
 

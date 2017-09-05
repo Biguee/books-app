@@ -1,5 +1,5 @@
-
-
+DROP DATABASE IF EXISTS books;
+CREATE DATABASE books;
 DROP TABLE IF EXISTS books;
 
 -- change the format of ISBN   todo
