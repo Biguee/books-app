@@ -21,7 +21,7 @@ public class Book {
     @AuthorStartsFromA
     @Column(name = "author")
     private String author;
-    @Length(min = 2, max = 100)
+    @Length(min = 2, max = 200)
     @Column(name = "title")
     private String title;
     @CorrectISBN

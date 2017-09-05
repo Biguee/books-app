@@ -9,7 +9,7 @@
     <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
 </head>
 <body>
-<h1>List of books:</h1>
+<div>LIST OF BOOKS</div>
 <c:if test="${not empty bookList}">
 <table>
     <thead>
@@ -34,10 +34,7 @@
     </tbody>
 </table>
 </c:if>
-<c:if test="${empty bookList}">
-    <div>No records</div>
-</c:if>
-<td><a href="addBook.html">Add</a></td>
-
+<c:if test="${empty bookList}"><div>No records</div></c:if>
+<div><button onclick="location.href='addBook.html'" type="button">Add new record</button></div>
 </body>
 </html>

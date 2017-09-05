@@ -30,7 +30,7 @@ public class BookController {
             return new ModelAndView("/addBook");
         }
         bookService.saveBook(book);
-        return new ModelAndView("/addBookConfirmation");
+        return new ModelAndView("allBooks","bookList", bookService.findAllBooks());
     }
 
     @RequestMapping(value = "allBooks.html")

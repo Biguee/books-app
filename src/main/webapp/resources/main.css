@@ -1,8 +1,66 @@
 body{
-    background-color: aquamarine;
+    background-color: #0e212e;
+}
+div {
+    text-align: center;
+    margin-top: 2%;
+    color: #ffffff;
+    font-size: large;
 }
 
-button{
-    border: dotted;
-    color: blue;
+a:hover{
+    color: white;
+}
+a:visited{
+    color: #0d71af;
+}
+
+.textError{
+    color: red;
+}
+.inputError{
+    border-color: red;
+}
+button {
+    background-color: #f6fffc; /* Green */
+    border: 2px solid #0d71af;
+    color: #0e212e;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+#labelForInput{
+    text-align: center;
+}
+table{
+    background-color: white;
+}
+table {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #008CBA;
+    color: white;
 }

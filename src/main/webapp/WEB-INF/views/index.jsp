@@ -4,21 +4,13 @@
 
 <html>
 <head>
-    <title>Book's app</title>
+    <title>Books</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="<c:url value="/resources/main.css" />" rel="stylesheet">
-
 </head>
+
 <body>
-<li>
-    <a href="allBooks.html">
-        List of books
-    </a>
-</li>
-<li>
-    <a href="addBook.html">
-        add book
-    </a>
-</li>
+<div><a href="allBooks.html">LIST PAGE</a></div>
+<div><a href="addBook.html">NEW RECORD PAGE</a></div>
 </body>
 </html>
